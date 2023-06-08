@@ -2,10 +2,7 @@ import express from 'express'
 import request from 'superagent'
 
 // NEW .env
-import path from 'path'
-import dotenv from 'dotenv'
-const envPath = path.join(__dirname, '../../.env')
-dotenv.config({ path: envPath })
+import 'dotenv/config'
 
 const router = express.Router()
 
@@ -29,7 +26,6 @@ router.post('/testreq', (req, res) => {
       return res.json(response.body)
     })
     .catch((err) => console.log('OPEN AI API ERR: ', err.message))
-  console.log(process.env.OPEN_AI_KEY)
 })
 
 export default router
