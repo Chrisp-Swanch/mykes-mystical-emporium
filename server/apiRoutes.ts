@@ -23,7 +23,10 @@ router.post('/testreq', (req, res) => {
       temperature: 0.7,
     })
     .then((response) => {
-      return res.json(response.body)
+      console.log(
+        `Generated Horoscope: "${response.body.choices[0].message.content}"`
+      )
+      return res.json(response.body.choices[0].message.content)
     })
     .catch((err) => console.log('OPEN AI API ERR: ', err.message))
 })
