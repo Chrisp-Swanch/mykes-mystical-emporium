@@ -1,13 +1,9 @@
 import { useState, useEffect, FormEvent, ChangeEvent } from 'react'
-//import { getHoroscope } from '../apiClient'
-
-interface Form {
-  birthdate: string
-}
+import { getHoroscope } from '../api/openAi'
 
 export function Form() {
-  // const [horoscope, setHoroscope] = useState(null as null | string)
-  const [formState, setFormState] = useState({} as Form | any)
+  const [horoscope, setHoroscope] = useState('')
+  const [formState, setFormState] = useState('')
 
   // useEffect(() => {
   //   async function loadResponse() {
@@ -21,31 +17,33 @@ export function Form() {
 
   async function handleSubmit(evt: FormEvent) {
     evt.preventDefault()
-    console.log()
+    console.log(formState)
+    const {text} = await getHoroscope(formState)
+    console.log(text)
+    setHoroscope(text)
+
   }
 
   function handleChange(evt: ChangeEvent<HTMLInputElement>) {
     const { value } = evt.currentTarget
 
-    console.log('change!')
-    setFormState({
-      ...formState,
-      birthdate: value,
-    })
+    setFormState(value)
   }
 
   return (
     <>
       <form onSubmit={handleSubmit}>
-        <label htmlFor="birthdate">Birthdate: </label>
+        <label htmlFor="birthdate">Enter your birthday: </label>
         <input
           id="birthdate"
           name="birthdate"
-          type="date"
+          type="text"
           value={formState}
           onChange={handleChange}
         />
+        <button className="submit" type="submit">Tell me my future!</button>
       </form>
+      {horoscope != '' && <p>{horoscope}</p>}
     </>
   )
 }
