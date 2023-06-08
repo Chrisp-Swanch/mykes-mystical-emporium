@@ -49,3 +49,5 @@ export function Form() {
     </>
   )
 }
+
+export default Form
