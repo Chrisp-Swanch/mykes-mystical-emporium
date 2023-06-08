@@ -1,6 +1,7 @@
 import { join } from 'node:path'
 import express from 'express'
 import cors, { CorsOptions } from 'cors'
+import router from './apiRoutes'
 
 const server = express()
 
@@ -14,5 +15,6 @@ server.get('/api/v1/greeting', (req, res) => {
 server.use(express.json())
 server.use(express.static(join(__dirname, './public')))
 server.use(cors('*' as CorsOptions))
+server.use('/api/v1/', router)
 
 export default server
