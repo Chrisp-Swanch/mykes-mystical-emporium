@@ -1,0 +1,85 @@
+// Imports
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=EB+Garamond:ital,wght@0,400;0,600;0,700;0,800;1,400;1,500;1,600;1,700;1,800&display=swap');
+
+@font-face {
+  font-family: "Bismarck";
+  src: '/fonts/bismarck.ttf';
+}
+
+// Variables
+
+// ------
+// Colors
+// ------
+
+$bg-light: #DA00E5;
+$bg-main: #2b2b2a;
+
+$highlight: #FC949B;
+// $alt-highlight: #c5692b;
+
+$text-main: #FBF9DA;
+$text-dark: rgb(31, 30, 30);
+
+// Fonts
+$font-basic: 'EB Garamond', serif;
+$font-headings: 'Bismarck', serif;
+
+
+// ------
+// Banner
+// ------
+
+$banner-container-height: 250px;
+$banner-logo-size: 320px;
+
+
+// ------
+// Mixins
+// ------
+
+@mixin shadow() {
+  box-shadow: 0px 5px 5px #19191a;
+}
+
+@mixin underline() {
+  text-decoration-line: underline;
+  text-decoration-color: $alt-highlight;
+  text-decoration-thickness: 3px;
+}
+
+// ------
+//  Media
+// ------
+
+$breakpoint-xsmall: 400px;
+$breakpoint-small: 576px;
+$breakpoint-medium: 768px;
+$breakpoint-large: 1024px;
+$breakpoint-extra-large: 1300px;
+
+@mixin max-width($breakpoint) {
+  @if ($breakpoint == xsmall) {
+    @media (max-width: $breakpoint-xsmall) {
+      @content;
+    }
+  } @else if ($breakpoint == small) {
+    @media (max-width: $breakpoint-small) {
+      @content;
+    }
+  } @else if ($breakpoint == medium) {
+    @media (max-width: $breakpoint-medium) {
+      @content;
+    }
+  } @else if ($breakpoint == large) {
+    @media (max-width: $breakpoint-large) {
+      @content;
+    }
+  } @else if ($breakpoint == xlarge) {
+    @media (max-width: $breakpoint-extra-large) {
+      @content;
+    }
+  } @else {
+    @error "UNKNOWN MEDIA BREAKPOINT #{$breakpoint}";
+  }
+}
