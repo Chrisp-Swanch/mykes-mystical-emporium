@@ -10,8 +10,7 @@ export function Form() {
 
   async function handleSubmit(evt: FormEvent) {
     evt.preventDefault()
-   
-   
+
     setOrbstate('/images/crystalball_loading.gif')
     const { text } = await getHoroscope(formState)
     setHoroscope(text)
@@ -26,22 +25,26 @@ export function Form() {
 
   return (
     <>
-    <Link to='/soulmate'><button>Find out my soulmate...</button></Link>
-      <form onSubmit={handleSubmit}>
-        <label htmlFor="birthdate">Enter your birthday: </label>
-        <input
-          id="birthdate"
-          name="birthdate"
-          type="text"
-          value={formState}
-          onChange={handleChange}
-        />
-        <button className="submit" type="submit">
-          Tell me my future!
-        </button>
-      </form>
-      <Orb image={orbState} />
-      {horoscope != '' && <p>{horoscope}</p>}
+      <div className="form">
+        <Link to="/soulmate">
+          <button>Find out my soulmate...</button>
+        </Link>
+        <form onSubmit={handleSubmit}>
+          <label htmlFor="birthdate">Enter your birthday: </label>
+          <input
+            id="birthdate"
+            name="birthdate"
+            type="text"
+            value={formState}
+            onChange={handleChange}
+          />
+          <button className="submit" type="submit">
+            Tell me my future!
+          </button>
+        </form>
+        <Orb image={orbState} />
+        {horoscope != '' && <p>{horoscope}</p>}
+      </div>
     </>
   )
 }
