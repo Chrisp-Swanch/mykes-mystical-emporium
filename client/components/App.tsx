@@ -5,7 +5,6 @@ import { Outlet } from 'react-router-dom'
 const App = () => {
   return (
     <>
-      <img src="/images/title.png" alt="" />
       <Outlet />
     </>
   )
