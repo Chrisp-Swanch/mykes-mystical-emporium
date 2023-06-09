@@ -1,4 +1,4 @@
-import { useState, useEffect, FormEvent, ChangeEvent } from 'react'
+import { useState, FormEvent, ChangeEvent } from 'react'
 import { getHoroscope } from '../api/openAi'
 import { Link } from 'react-router-dom'
 import { Orb } from './Orb'

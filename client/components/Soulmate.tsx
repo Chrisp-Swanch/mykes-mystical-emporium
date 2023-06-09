@@ -37,29 +37,33 @@ function Soulmate() {
         </Link>
         <h2>Find out who your soulmate is...</h2>
         <form onSubmit={handleSubmit}>
-          <label htmlFor="name">Enter your name: </label>
-          <input
-            id="name"
-            name="name"
-            type="text"
-            value={nameState}
-            onChange={handleNameChange}
-          />
-          <label htmlFor="profession">Enter your profession: </label>
-          <input
-            id="profession"
-            name="profession"
-            type="text"
-            value={profState}
-            onChange={handleProfChange}
-          />
-          <button className="submit" type="submit">
-            Reveal my soulmate!
-          </button>
+          <div className="option">
+            <label htmlFor="name">Enter your name: </label>
+            <input
+              id="name"
+              name="name"
+              type="text"
+              value={nameState}
+              onChange={handleNameChange}
+            />
+          </div>
+          <div className="option">
+            <label htmlFor="profession">Enter your profession: </label>
+            <input
+              id="profession"
+              name="profession"
+              type="text"
+              value={profState}
+              onChange={handleProfChange}
+            />
+            <button className="submit" type="submit">
+              Reveal my soulmate!
+            </button>
+          </div>
         </form>
         <Orb image={orbState} />
         {soulmate != '' && <p>{soulmate}</p>}
-        </div>
+      </div>
     </>
   )
 }

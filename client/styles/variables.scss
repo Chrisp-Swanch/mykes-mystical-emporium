@@ -16,6 +16,7 @@ $highlight: #FC949B;
 
 $text-main: #FBF9DA;
 $text-dark: rgb(31, 30, 30);
+$text-bg: #2b2b2a76;
 
 // Fonts
 $font-basic: 'EB Garamond', serif;
@@ -30,23 +31,23 @@ $banner-container-height: 250px;
 $banner-logo-size: 320px;
 
 
-// ------
-// Mixins
-// ------
+// // ------
+// // Mixins
+// // ------
 
-@mixin shadow() {
-  box-shadow: 0px 5px 5px #19191a;
-}
+// @mixin shadow() {
+//   box-shadow: 0px 5px 5px #19191a;
+// }
 
-@mixin underline() {
-  text-decoration-line: underline;
-  text-decoration-color: $alt-highlight;
-  text-decoration-thickness: 3px;
-}
+// @mixin underline() {
+//   text-decoration-line: underline;
+//   text-decoration-color: $alt-highlight;
+//   text-decoration-thickness: 3px;
+// }
 
-// ------
-//  Media
-// ------
+// // ------
+// //  Media
+// // ------
 
 $breakpoint-xsmall: 400px;
 $breakpoint-small: 576px;
