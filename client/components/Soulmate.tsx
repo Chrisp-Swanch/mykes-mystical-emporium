@@ -1,16 +1,22 @@
 import { useState, useEffect, FormEvent, ChangeEvent } from 'react'
 import { getSoulMate } from '../api/openAi'
 import { Link } from 'react-router-dom'
+import { Orb } from './Orb'
 
 function Soulmate () {
   const [soulmate, setSoulmate] = useState('')
   const [nameState, setnameState] = useState('')
   const [profState, setProfState] = useState('')
+  const [orbState, setOrbstate] = useState('/images/crystalball_static.png')
+
 
   async function handleSubmit(evt: FormEvent) {
     evt.preventDefault()
+    setOrbstate('/images/crystalball_loading.gif')
     const {text} = await getSoulMate(nameState, profState)
     setSoulmate(text)
+    setOrbstate('/images/crystalball_static.png')
+
 
   }
 
@@ -51,6 +57,7 @@ function Soulmate () {
         />
         <button className="submit" type="submit">Reveal my soulmate!</button>
       </form>
+      <Orb image={orbState} />
       {soulmate != '' && <p>{soulmate}</p>}
     </>
   </>
