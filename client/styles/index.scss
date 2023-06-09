@@ -4,6 +4,7 @@ html {
   font-family: $font-basic;
   color: $text-dark;
   background-color: $bg-main;
+  background-image: radial-gradient($bg-main, $bg-light, $bg-main);
   margin: 0px;
 }
 
@@ -59,9 +60,12 @@ h1 {
 }
 
 .ad-sidebar {
-  background-color: red;
+  background-color: $bg-main;
   width: 100%;
-  height: 100%;
+  height: 100vh;
+  // margin: 20px;
+  padding: 20px;
+  border-radius: 20px;
 }
 
 .form {
@@ -70,5 +74,16 @@ h1 {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  // justify-content: center;
+  padding: 30px, 30px, 30px, 30px;
+}
+
+.form button {
+  margin: 10px;
+  padding: 10px;
+}
+
+#orb {
+  padding: 10px;
+  max-width: 100px;
 }
