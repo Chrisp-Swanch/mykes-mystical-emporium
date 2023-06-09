@@ -10,8 +10,8 @@ export function Form() {
 
   async function handleSubmit(evt: FormEvent) {
     evt.preventDefault()
-    console.log(formState)
-    const {text} = await getHoroscope(formState)
+   
+   
     setOrbstate('/images/crystalball_loading.gif')
     const { text } = await getHoroscope(formState)
     setHoroscope(text)
