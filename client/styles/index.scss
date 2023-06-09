@@ -7,6 +7,10 @@ html {
   margin: 0px;
 }
 
+.app {
+  margin: 0px
+}
+
 body {
   margin: 0px;
 }
@@ -30,71 +34,32 @@ h1 {
     &__logo {
       position: absolute;
       max-width: $banner-logo-size;
-      left: calc($banner-logo-size / -2);
-      top: calc($banner-logo-size / -2.3);
+      // left: calc($banner-logo-size / -2);
+      // top: calc($banner-logo-size / -2.3);
     }
 
     &__feature {
+      z-index: -1;
       position: absolute;
       object-fit: cover;
-      max-width: 100vw;
+      min-width: 100vw;
       min-height: $banner-container-height;
       left: -50vw;
-      top: -40vw;
+      top: calc($banner-container-height / -2);
 
       @include max-width(xsmall) {
         top: calc($banner-container-height / -2);
       }
     }
+}
 
-    #animated-logo {
-      -webkit-animation-name: spin;
-      -webkit-animation-duration: 50000ms;
-      -webkit-animation-iteration-count: infinite;
-      -webkit-animation-timing-function: linear;
+.content {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+}
 
-      -moz-animation-name: spin;
-      -moz-animation-duration: 50000ms;
-      -moz-animation-iteration-count: infinite;
-      -moz-animation-timing-function: linear;
-
-      -ms-animation-name: spin;
-      -ms-animation-duration: 50000ms;
-      -ms-animation-iteration-count: infinite;
-      -ms-animation-timing-function: linear;
-
-      animation-name: spin;
-      animation-duration: 50000ms;
-      animation-iteration-count: infinite;
-      animation-timing-function: linear;
-
-      @-ms-keyframes spin { 
-          from { 
-              -ms-transform: rotate(0deg); 
-          } to { 
-              -ms-transform: rotate(360deg); 
-          }
-      }
-      @-moz-keyframes spin { 
-          from { 
-              -moz-transform: rotate(0deg); 
-          } to { 
-              -moz-transform: rotate(360deg); 
-          }
-      }
-      @-webkit-keyframes spin { 
-          from { 
-              -webkit-transform: rotate(0deg); 
-          } to { 
-              -webkit-transform: rotate(360deg); 
-          }
-      }
-      @keyframes spin { 
-          from { 
-              transform: rotate(0deg); 
-          } to { 
-              transform: rotate(360deg); 
-          }
-      }
-    }
+.ad-sidebar {
+  background-color: red;
+  width: 100%;
+  height: 100%;
 }
