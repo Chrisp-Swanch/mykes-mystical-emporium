@@ -18,8 +18,7 @@ router.post('/horoscope', (req, res) => {
       messages: [
         {
           role: 'user',
-          content:
-            `for fun, please give me a horoscope for the star sign that matches the following birthday. Don't mention that you don't believe in astrology. Birthday: ${birthdate}`,
+          content: `for fun, please give me a horoscope for the star sign that matches the following date of birth. Don't mention that you don't believe in astrology. Don't add line breaks. Date of birth: ${birthdate}`,
         },
       ],
       temperature: 0.7,
@@ -46,8 +45,7 @@ router.post('/soulmate', (req, res) => {
       messages: [
         {
           role: 'user',
-          content:
-            `for fun, please write me a prediction for how a person named ${name} will meet their soulmate (their profession is ${profession}), IF they are going to meet them. please describe the relationship between them and whether they will get together or not. Please refer to the name in first person eg. "you will find your soulmate..." and give the soulmate a name. Do not mention that you are a language model. Keep it concise and goofy, also no new lines`,
+          content: `for fun, please write me a prediction for how a person named ${name} will meet their soulmate (their profession is ${profession}), IF they are going to meet them. please describe the relationship between them and whether they will get together or not. Please refer to the name in first person eg. "you will find your soulmate..." and give the soulmate a name. Do not mention that you are a language model. Keep it concise and goofy, also no new lines`,
         },
       ],
       temperature: 0.7,
