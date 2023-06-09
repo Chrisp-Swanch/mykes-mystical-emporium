@@ -1,11 +1,11 @@
 import { useState, useEffect } from 'react'
-import Form from './Form'
+import { getGreeting } from '../apiClient'
+import { Outlet } from 'react-router-dom'
 
 const App = () => {
-  // useEffect for ad popups
   return (
     <>
-      <Form />
+      <Outlet />
     </>
   )
 }

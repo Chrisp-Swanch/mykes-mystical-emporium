@@ -1,12 +1,9 @@
 import request from 'superagent'
 
-interface Param {
-  birthdate: string
-}
 
-export function getHoroscope(param: Param) {
-  return request.post('/api/v1/testreq')
-  .send(param)
+export function getHoroscope(param: string): Promise<any>{
+  return request.post('/api/v1/openAI/horoscope')
+  .send({param})
   .then((res) => {return res})
   .catch(e => console.log(e))
 }
