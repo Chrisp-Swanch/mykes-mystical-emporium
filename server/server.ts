@@ -17,6 +17,6 @@ const server = express()
 server.use(express.json())
 server.use(express.static(join(__dirname, './public')))
 server.use(cors('*' as CorsOptions))
-server.use('/api/v1/', router)
+server.use('/api/v1/openAI', router)
 
 export default server

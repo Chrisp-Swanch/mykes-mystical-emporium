@@ -19,7 +19,6 @@ export function Form() {
     evt.preventDefault()
     console.log(formState)
     const {text} = await getHoroscope(formState)
-    console.log(text)
     setHoroscope(text)
 
   }
