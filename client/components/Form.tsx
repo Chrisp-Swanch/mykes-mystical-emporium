@@ -29,6 +29,7 @@ export function Form() {
         <Link to="/soulmate">
           <button>Find out my soulmate...</button>
         </Link>
+        <h2>See your future...</h2>
         <form onSubmit={handleSubmit}>
           <label htmlFor="birthdate">Enter your birthday: </label>
           <input

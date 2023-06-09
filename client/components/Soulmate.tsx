@@ -31,7 +31,7 @@ function Soulmate() {
 
   return (
     <>
-      <>
+      <div className="form">
         <Link to="/">
           <button>Take me to my fortune...</button>
         </Link>
@@ -59,7 +59,7 @@ function Soulmate() {
         </form>
         <Orb image={orbState} />
         {soulmate != '' && <p>{soulmate}</p>}
-      </>
+        </div>
     </>
   )
 }

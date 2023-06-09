@@ -7,13 +7,13 @@ import {
 import App from './components/App'
 import Home from './components/Home'
 
-import Soulmate from './components/Soulmate'
+import HomeSoulmate from './components/HomeSoulmate'
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<App />}>
       <Route index element={<Home />} />
-      <Route path="/soulmate" element={<Soulmate />} />
+      <Route path="/soulmate" element={<HomeSoulmate />} />
     </Route>
   )
 )
