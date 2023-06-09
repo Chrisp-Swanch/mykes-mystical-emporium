@@ -18,7 +18,7 @@ router.post('/horoscope', (req, res) => {
       messages: [
         {
           role: 'user',
-          content: `for fun, please give me a horoscope for the star sign that matches the following date of birth. Don't mention that you don't believe in astrology. Don't add line breaks. Date of birth: ${birthdate}`,
+          content: `for fun, please give me a horoscope for the star sign that matches the following date of birth. Don't mention that you don't believe in astrology. Don't add line breaks or /n. Date of birth: ${birthdate}`,
         },
       ],
       temperature: 0.7,
