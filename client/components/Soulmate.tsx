@@ -1,5 +1,6 @@
 import { useState, useEffect, FormEvent, ChangeEvent } from 'react'
 import { getSoulMate } from '../api/openAi'
+import { Link } from 'react-router-dom'
 
 function Soulmate () {
   const [soulmate, setSoulmate] = useState('')
@@ -29,6 +30,7 @@ function Soulmate () {
 
   return <>
     <>
+      <Link to='/'><button>Take me to my fortune...</button></Link>
       <h2>Find out who your soulmate is...</h2>
       <form onSubmit={handleSubmit}>
         <label htmlFor="name">Enter your name: </label>
@@ -47,7 +49,7 @@ function Soulmate () {
           value={profState}
           onChange={handleProfChange}
         />
-        <button className="submit" type="submit">Tell me my future!</button>
+        <button className="submit" type="submit">Reveal my soulmate!</button>
       </form>
       {soulmate != '' && <p>{soulmate}</p>}
     </>
