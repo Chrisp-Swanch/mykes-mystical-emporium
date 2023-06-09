@@ -1,9 +1,11 @@
 import { useState, useEffect, FormEvent, ChangeEvent } from 'react'
 import { getHoroscope } from '../api/openAi'
+import { Orb } from './Orb'
 
 export function Form() {
   const [horoscope, setHoroscope] = useState('')
   const [formState, setFormState] = useState('')
+  const [orbState, setOrbstate] = useState('/images/crystalball_static.png')
 
   // useEffect(() => {
   //   async function loadResponse() {
@@ -18,9 +20,10 @@ export function Form() {
   async function handleSubmit(evt: FormEvent) {
     evt.preventDefault()
     console.log(formState)
-    const {text} = await getHoroscope(formState)
+    setOrbstate('/images/crystalball_loading.gif')
+    const { text } = await getHoroscope(formState)
     setHoroscope(text)
-
+    setOrbstate('/images/crystalball_static.png')
   }
 
   function handleChange(evt: ChangeEvent<HTMLInputElement>) {
@@ -40,8 +43,11 @@ export function Form() {
           value={formState}
           onChange={handleChange}
         />
-        <button className="submit" type="submit">Tell me my future!</button>
+        <button className="submit" type="submit">
+          Tell me my future!
+        </button>
       </form>
+      <Orb image={orbState} />
       {horoscope != '' && <p>{horoscope}</p>}
     </>
   )
